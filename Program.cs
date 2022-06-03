@@ -49,6 +49,13 @@ foreach(var a in ctx.CinemaMovies.ToList().Where(b => b.MovieId == spiderMan.Mov
     WriteLine(ctx.Cinemas.Find(a.CinemaId).Name);
 }
 
+WriteLine("-------------------------------------");
+
+WriteLine("MOVIES AT MADRID:");
+foreach(var a in ctx.CinemaMovies.ToList().Where(b => b.CinemaId == madridCinema.CinemaId)){
+    WriteLine(ctx.Movies.Find(a.MovieId).Name);
+} 
+
 
 ctx.SaveChanges();
 
